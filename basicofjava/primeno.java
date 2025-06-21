@@ -1,7 +1,7 @@
 import java.util.*;
 public class primeno{
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);   
+        Scanner sc=new Scanner(System.in);   
         String input;
         do{
         int num=sc.nextInt();
@@ -21,13 +21,13 @@ public class primeno{
             
         }
         if(isPrime)
-            {System.out.println("the number  prime");}
-            else{
+            System.out.println("the number  prime");
+        else
             System.out.println("the number is not prime");
-            }
+            
 
-            System.out.println("press y to check another no");
-           input = sc.next();
+        System.out.println("press y to check another no");
+        input = sc.next();
         }
         while(input.equalsIgnoreCase("y"));
         sc.close();
