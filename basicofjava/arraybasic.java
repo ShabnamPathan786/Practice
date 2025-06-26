@@ -22,9 +22,19 @@ public class arraybasic{
         }
         //System.out.println(Arrays.toString(arr1D));
         //or
-        for (int i = 0; i < arr1D.length; i++) {
-            System.out.print(arr1D[i]+" ");
+
+
+        // for (int i = 0; i < arr1D.length; i++) {
+        //     System.out.print(arr1D[i]+" ");
+        // }
+
+        //or using Enhanced for loop
+
+        for(int num:arr1D){
+            System.out.print(num+" ");
         }
+
+
 
 
   }
