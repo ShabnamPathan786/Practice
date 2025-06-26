@@ -11,6 +11,7 @@ public class ocuurance{
             //By cnverting to string and then iterate through each char 
 
             String str=Long.toString(num);
+            
            
             for (int i=0;i<str.length();i++){
                 int digit =Character.getNumericValue(str.charAt(i));
