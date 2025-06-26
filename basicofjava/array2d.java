@@ -31,9 +31,16 @@ public class array2d{
             //     System.out.println();
             // }
             //OR 
-            for (int row = 0; row < ar2D.length; row++) {
-                System.out.println(Arrays.toString(ar2D[row]));
-            }
+
+
+            // for (int row = 0; row < ar2D.length; row++) {
+            //     System.out.println(Arrays.toString(ar2D[row]));
+            // }
+
+            //or using enhanced for loop
+             for(int[] a:arr2D){
+                System.out.println(Arrays.toString(a));
+             }
 
 
     }
