@@ -17,7 +17,7 @@ public class linearsearch{
 
     }
     static boolean search(int[] nums,int target){
-         if(nums.length==0){
+         if(nums.length==0||nums==null){
              return false;
          }
         for(int i=0;i<nums.length;i++){
@@ -30,5 +30,6 @@ public class linearsearch{
     }
 
 }
+
 
 
