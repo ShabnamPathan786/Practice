@@ -7,6 +7,9 @@ public class check{
         int ans2=checkeven2(arr);
         System.out.println(ans2);
 
+        int ans3=checkeven3(arr);
+        System.out.println(ans3);
+       
 
     }
     //by converting to string 
@@ -32,8 +35,9 @@ public class check{
                 int n=num;
                 int digit=0;
                 while(n>0){
-                    digit++;
+                    
                     n/=10;
+                    digit++;
 
                 }
                 if(digit%2==0){
@@ -51,9 +55,27 @@ public class check{
                     count++;
                 }
             }
+            return count;
     }
-    static boolean even(int n){
-        
+    static boolean even(int num){    
+        int count=digit(num);
+        return count %2 == 0;
+
+    }
+    
+    static int digit(int num){
+        if(num<0)
+        {num=num*-1;}
+        if(num==0){
+            return 1;
+            
+        }
+        int count=0;
+        while(num>0){
+                num/=10;
+                count++;
+        }
+        return count;
     }
     
 }

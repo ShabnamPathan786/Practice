@@ -8,7 +8,7 @@ public class fibonaccino{
         int a=sc.nextInt();
         System.out.println("enter second  number of series");
         int b = sc.nextInt();
-        using for loop
+        //using for loop
         for(int i=2;i<=n;i++){
             int temp=b;
             b=b+a;
