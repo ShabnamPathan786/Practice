@@ -125,7 +125,24 @@ public Node findNode(int val){
             }
             temp=temp.next;
         }
-        return null;
+       return null;
+}
+
+// INSERT AT INDEX USING RECURSION  can do this void retrun datatype check it for at once..
+
+
+public Node insertAtIdx(Node node,int index,int val){
+    if(index<0) return node;
+
+    if(index==0){
+        Node newNode=new Node(val);
+        newNode.next=node;
+        size++;
+        return newNode;
+    }
+     if (node == null) return null;
+    node.next=insertAtIdx(node.next,index-1,val);
+    return node;
 }
     
     public void displayList(){
@@ -181,6 +198,7 @@ public Node findNode(int val){
     System.out.println(ll. romoveMiddle(2));
      Node found=ll.findNode(2);
      System.out.println(found.data);
+     ll.head=ll.insertAtIdx(ll.head,2,99);
 
 
     
