@@ -144,6 +144,17 @@ public Node insertAtIdx(Node node,int index,int val){
     node.next=insertAtIdx(node.next,index-1,val);
     return node;
 }
+
+public Node reverse (Node head){
+    if(head==null ||head.next==null) return head;
+
+    Node node=reverse(head.next);
+
+   head.next.next=head ;
+   head.next=null;
+   return node;
+    
+}
     
     public void displayList(){
         if(head==null){
@@ -191,15 +202,20 @@ public Node insertAtIdx(Node node,int index,int val){
     ll.addFirst(1);
     ll.addFirst(2);
     ll.addFirst(3);
-    ll.addMiddle(8,2);
-    System.out.println(ll.removeFirst());
-     System.out.println(ll.removeLast());
+    //ll.addMiddle(8,2);
+    // System.out.println(ll.removeFirst());
+    //  System.out.println(ll.removeLast());
     ll.addFirst(3);
-    System.out.println(ll. romoveMiddle(2));
-     Node found=ll.findNode(2);
-     System.out.println(found.data);
-     ll.head=ll.insertAtIdx(ll.head,2,99);
-
+    //System.out.println(ll. romoveMiddle(2));
+     //Node found=ll.findNode(2);
+     //System.out.println(found.data);
+     //ll.head=ll.insertAtIdx(ll.head,2,99);
+     ll.displayList();
+     Node ans=ll.reverse(ll.head);
+     while(ans!=null){
+        System.out.print(ans.data +" -> ");
+        ans=ans.next;
+     }
 
     
 
