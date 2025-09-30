@@ -19,17 +19,39 @@ public class SortLL {
       }
 
       public Node sortList(Node head){
-        if(head==null || head.next==null) return haed;
-        //SortLL ans=new SortLL();
+        if(head==null || head.next==null) return head;
         Node f=head;
-        Node s=haed.next;
-        while(f!=null && s!=null){
-            if(f.data>s.data){
-                
-            }
-
+        Node s=head;
+        Node mid=null;
+        while( f!=null && f.next!=null){
+            mid=s;
+            s=s.next;
+            f=f.next.next;
         }
-      }
+        mid.next=null;
+        Node left=sortList(head);
+        Node right=sortList(s);
+        return merge(left,right);
+}
+     public Node merge(Node l,Node r){
+        Node dummy=new Node(0);
+        Node curr=dummy;
+        while(l!=null && r!=null){
+            if(l.data<r.data){
+                curr.next=l;
+                l=l.next;
+            }else{
+                curr.next=r;
+                r=r.next;
+            }
+            curr=curr.next;
+        }
+        if(l!=null) curr.next=l;
+        if(r!=null) curr.next=r;
+
+        return dummy.next;
+
+     }
       
 
     
@@ -77,6 +99,11 @@ public class SortLL {
     ll.addFirst(5);
     ll.addFirst(2);
     ll.addFirst(3);
+    System.out.println("before sorting");
+    ll.displayList();
+    ll.head= ll.sortList(ll.head);
+    System.out.println("after sorting");
+    ll.displayList();
     }
     
 }
